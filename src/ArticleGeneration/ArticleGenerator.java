@@ -25,7 +25,7 @@ public class ArticleGenerator {
 
         //Describe who they are
         if (r.nextDouble() < 0.5) { //50% chance
-            sb.append(", " + getDescription() + ", ");
+            sb.append(", " + getDescription() + ",");
         }
 
         if (r.nextDouble() < 0.2) { //20%c chance
