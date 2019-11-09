@@ -6,17 +6,22 @@ public class ArticleGenerator {
     static Random r;
     static StringBuilder sb;
 
-    ArticleGenerator() {
+    static String[] subjects;
+    static String[] descriptions;
+    static String[] actions;
+
+    public ArticleGenerator() {
         r = new Random();
         sb = new StringBuilder();
+        subjects = new WordScanner("subject.txt").toArray();
+        descriptions = new WordScanner("description.txt").toArray();
+        actions = new WordScanner("actions.txt").toArray();
     }
 
-    static String getArticle() {
+    public static String getArticle() {
 
         //Get a persons name on there
-        if (r.nextDouble() < 1.0) { //100% chance
-            sb.append(getSubject());
-        }
+        sb.append(getSubject());
 
         //Describe who they are
         if (r.nextDouble() < 0.5) { //50% chance
@@ -27,9 +32,7 @@ public class ArticleGenerator {
             sb.append(" and " + getSubject());
         }
 
-        if (r.nextDouble() < 1.0) { //100% chance
-            sb.append(" " + getAction());
-        }
+        sb.append(" " + getAction());
 
         if (r.nextDouble() < 0.2) { //20% chance
             sb.append(" and " );
@@ -43,14 +46,14 @@ public class ArticleGenerator {
     //supplemental methods
 
     static String getSubject() {
-        //TODO
+        return subjects[r.nextInt(subjects.length)];
     }
 
     static String getDescription() {
-        //TODO
+        return descriptions[r.nextInt(descriptions.length)];
     }
 
     static String getAction() {
-        //TODO
+        return actions[r.nextInt(actions.length)];
     }
 }
