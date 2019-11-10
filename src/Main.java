@@ -1,6 +1,7 @@
 import ArticleGeneration.ArticleGenerator;
 
 public class Main {
+    //Test main, prints out a new news article every 3 seconds
     static ArticleGenerator ag = new ArticleGenerator();
 
     public static void main(String[] args) {
