@@ -4,8 +4,8 @@ import java.io.*;
 import java.util.ArrayList;
 
 public class WordScanner {
-    ArrayList<String> arr;
-    File file;
+    private ArrayList<String> arr;
+    private File file;
 
     WordScanner(String name) {
         file = new File("src\\ArticleGeneration\\Word Bank\\" + name);
